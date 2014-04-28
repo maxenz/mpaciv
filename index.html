@@ -16,6 +16,14 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+
+            #feedback a{ display:block; position:fixed; top:200px; right:-1px;cursor:pointer;
+              width:60px;height:80px;background:#f16529;font-size: 40px;color: white;text-align: center;
+line-height: 90px}
+
+#feedback a:hover{background:#e44d26;}
+
+
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -44,12 +52,14 @@
       </div>
     </div>
 
+        <div id="feedback"><a href"#" id="trigger-overlay"><span class="glyphicon glyphicon-cog"></span></a></div>
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" id="trigger-overlay" role="button">Learn more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg"  role="button">Learn more &raquo;</a></p>
       </div>
     </div>
 
@@ -86,7 +96,9 @@
       </nav>
     </div>
 
-      <hr>
+
+
+    <hr>
 
       <footer>
         <p>&copy; Company 2014</p>
