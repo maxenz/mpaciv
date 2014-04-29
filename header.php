@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style7.css" />
         <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
-        <link rel="stylesheet" href="jqwidgets/styles/jqx.bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="jqwidgets/styles/jqx.ui-lightness.css" type="text/css" />
         <link rel="stylesheet" href="css/main.css">
 
       <script src="js/modernizr.custom.js"></script>

@@ -26,22 +26,27 @@
                 </a>
               </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab" style="padding-top:25px">
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
-                    <center>
+                     <div class="row">
+        <div class="col-md-8">
+            <div id="jqxgrid"></div>
+        </div>
+    </div>
+<!--                     <center>
                       <h1 class="glyphicon glyphicon-plane" style="font-size:12em;color:#428bca"></h1>
                       <h2 style="margin-top: 0;color:#428bca">Cooming Soon</h2>
                       <h3 style="margin-top: 0;color:#428bca">Flight Reservation</h3>
-                    </center>
+                    </center> -->
                 </div>
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
-                    <center>
+<!--                     <center>
                       <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
                       <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
                       <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
-                    </center>
+                    </center> -->
                 </div>
     
                 <!-- hotel search -->
@@ -90,7 +95,7 @@
 ?>
 
 
-<!--        <div id="popupWindow">
+       <div id="popupWindow">
             <div>Edit</div>
             <div style="overflow: hidden;">
                 <table>
@@ -126,11 +131,11 @@
             <li>Edit Selected Row</li>
             <li>Delete Selected Row</li>
         </ul>
-       </div> -->
+       </div>
 
 <script type="text/javascript">
 
-/*var data = {};
+            var data = {};
             var firstNames =
             [
                 "Andrew", "Nancy", "Shelley", "Regina", "Yoshi", "Antoni", "Mayumi", "Ian", "Peter", "Lars", "Petra", "Martin", "Sven", "Elio", "Beate", "Cheryl", "Michael", "Guylene"
@@ -211,8 +216,8 @@
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {
-                width: 850,
-                theme: 'bootstrap',
+                autowidth: true,
+                theme: 'ui-lightness',
                 source: dataAdapter,
                 pageable: true,
                 autoheight: true,
@@ -275,7 +280,7 @@
                     $('#jqxgrid').jqxGrid('updaterow', rowid, row);
                     $("#popupWindow").jqxWindow('hide');
                 }
-            });*/
+            });
 
             $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
         e.preventDefault();

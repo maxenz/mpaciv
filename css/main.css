@@ -31,7 +31,7 @@ div.navbar-mpaciv{
 	cursor:pointer;
 	width:60px;
 	height:80px;
-	background:#f16529;
+  background:#fbb450;
 	font-size: 40px;
 	color: white;
 	text-align: center;
@@ -39,7 +39,8 @@ div.navbar-mpaciv{
 }
 
 #feedback a:hover{
-	background:#fbb450;
+
+   background:#f16529;
 }
 
 div.overlay {
@@ -114,7 +115,6 @@ div.bhoechie-tab-content{
   background-color: #ffffff;
   /* border: 1px solid #eeeeee; */
   padding-left: 20px;
-  padding-top: 10px;
 }
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
