@@ -4,11 +4,13 @@
    Author's custom styles
    ========================================================================== */
 
-
+body {
+	padding-top: 80px;
+    padding-bottom: 20px;
+}
 
 .navbar-mpaciv{
-	background: #f16529;
-	border-bottom: 13px solid #e44d26;
+	background: #006194;
 }
 
 #titleSite{
@@ -17,6 +19,34 @@
 
 div.navbar-mpaciv{
 	z-index:0;
+}
+
+#feedback a{ 
+	display:block; 
+	position:fixed;
+	top:250px;
+	right:-1px;
+	cursor:pointer;
+	width:60px;
+	height:80px;
+	background:#f16529;
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	line-height: 90px
+}
+
+#feedback a:hover{
+	background:#fbb450;
+}
+
+div.overlay {
+	z-index:9999;
+}
+
+.iconTabla {
+	background:none;
+	border:none;
 }
 
 
