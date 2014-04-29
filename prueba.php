@@ -4,11 +4,84 @@
 
 ?>
 
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<div id="jqxgrid"></div>
-	</div>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-8 col-xs-9 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <h4 class="glyphicon glyphicon-shopping-cart"></h4><br/>Productos
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-th-large"></h4><br/>Servicios
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-file"></h4><br/>T&iacute;tulos
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-star"></h4><br/>Empresas
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-play"></h4><br/>Otros
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <h1 class="glyphicon glyphicon-plane" style="font-size:12em;color:#428bca"></h1>
+                      <h2 style="margin-top: 0;color:#428bca">Cooming Soon</h2>
+                      <h3 style="margin-top: 0;color:#428bca">Flight Reservation</h3>
+                    </center>
+                </div>
+                <!-- train section -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
+                    </center>
+                </div>
+    
+                <!-- hotel search -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
+                    </center>
+                </div>
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
+                    </center>
+                </div>
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+  </div>
+
+
+<!--     <div class="row">
+    	<div class="col-md-8 col-md-offset-2">
+    		<div id="jqxgrid"></div>
+    	</div>
+    </div> -->
+
+<?php
+
+    include_once "footer.php";
+
+?>
 
 <?php
 
@@ -17,10 +90,7 @@
 ?>
 
 
-
-        <div id="jqxgrid"></div>
-
-       <div id="popupWindow">
+<!--        <div id="popupWindow">
             <div>Edit</div>
             <div style="overflow: hidden;">
                 <table>
@@ -56,11 +126,11 @@
             <li>Edit Selected Row</li>
             <li>Delete Selected Row</li>
         </ul>
-       </div>
+       </div> -->
 
 <script type="text/javascript">
 
-var data = {};
+/*var data = {};
             var firstNames =
             [
                 "Andrew", "Nancy", "Shelley", "Regina", "Yoshi", "Antoni", "Mayumi", "Ian", "Peter", "Lars", "Petra", "Martin", "Sven", "Elio", "Beate", "Cheryl", "Michael", "Guylene"
@@ -205,11 +275,20 @@ var data = {};
                     $('#jqxgrid').jqxGrid('updaterow', rowid, row);
                     $("#popupWindow").jqxWindow('hide');
                 }
-            });
+            });*/
+
+            $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
     </script>
-<?php
 
-	include_once "footer.php";
+    <?php
+        include_once "closePage.php";
+    ?>
 
-?>
 
