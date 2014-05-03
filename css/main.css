@@ -6,7 +6,9 @@
 
 body {
 	padding-top: 80px;
-    padding-bottom: 20px;
+  padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x:hidden;
 }
 
 .navbar-mpaciv{
@@ -119,6 +121,19 @@ div.bhoechie-tab-content{
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
+}
+
+.margin-row{
+  margin-bottom:10px;
+}
+
+label.error{
+  color:red;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+}
+
+
 
 
 

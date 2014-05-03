@@ -1,5 +1,7 @@
 <?php
 
+require_once '../lib/idiorm.php';
+
 ORM::configure(array(
     'connection_string' => 'mysql:host=localhost;dbname=mpaciv',
     'username' => 'maxenz',

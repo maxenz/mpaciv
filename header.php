@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,16 +10,18 @@
         <title></title>
         <meta name="description" content="MPACIV - Backend">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style7.css" />
-        <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
-        <link rel="stylesheet" href="jqwidgets/styles/jqx.ui-lightness.css" type="text/css" />
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/mpaciv/sitio/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/mpaciv/sitio/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="/mpaciv/sitio/css/normalize.css" />
+<!--         <link rel="stylesheet" type="text/css" href="/mpaciv/sitio/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/mpaciv/sitio/css/style7.css" /> -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/mpaciv/sitio/jqwidgets/styles/jqx.base.css" type="text/css" />
+        <link rel="stylesheet" href="/mpaciv/sitio/jqwidgets/styles/jqx.ui-lightness.css" type="text/css" />
+        <link rel="stylesheet" href="/mpaciv/sitio/css/main.css">
 
-      <script src="js/modernizr.custom.js"></script>
+      <script src="/mpaciv/sitio/js/modernizr.custom.js"></script>
+      
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -38,9 +41,9 @@
       </div>
     </div>
 
-    <div id="feedback"><a href"#" id="trigger-overlay"><span class="glyphicon glyphicon-cog"></span></a></div>
+    <!-- <div id="feedback"><a href"#" id="trigger-overlay"><span class="glyphicon glyphicon-cog"></span></a></div> -->
 
-    <div class="overlay overlay-contentpush">
+<!--     <div class="overlay overlay-contentpush">
         <button type="button" class="overlay-close">Close</button>
         <nav>
           <ul>
@@ -51,4 +54,4 @@
             <li><a href="#">Empresas</a></li>
           </ul>
         </nav>
-    </div>
+    </div> -->
