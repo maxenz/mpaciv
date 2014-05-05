@@ -7,17 +7,19 @@
 	$precio = "";
 	$tipMoneda = "";
 	$recPago = "";
-	$formaPago = "";
+	$tipFormaPago = "";
 	$estado = "";
+	$formaPago = "";
 	$output = "";
 
 	if ($_POST) {
-		$prodDesc = trim($_POST['prodDesc']);
-		$precio = trim($_POST['precio']);
-		$tipMoneda = trim($_POST['tipMoneda']);
-		$recPago = trim($_POST['recPago']);
-		$formaPago = trim($_POST['formaPago']);
-		$estado = trim($_POST['estado']);
+		$prodDesc = trim($_POST['iptProdDesc']);
+		$precio = trim($_POST['iptPrecio']);
+		$tipMoneda = trim($_POST['selTipMoneda']);
+		$recPago = trim($_POST['selRecPago']);
+		$tipFormaPago = trim($_POST['selTipFormaPago']);
+		$estado = trim($_POST['selEstado']);
+		$formaPago = trim($_POST['selFormaPago']);
 
 		$errors = array();
   
@@ -49,7 +51,7 @@
 
 			$producto->save();
 
-			header('Location: ../prueba.php');
+			header('Location: ../index.php');
 			exit;
 	  	} catch (PDOException $e) {
 
@@ -71,7 +73,7 @@
 	}
 ?>
 
-<form method="POST" action="frmNewProducto.php" id="register-form" novalidate="novalidate">
+<form method="POST" action="frmProducto.php" id="register-form" novalidate="novalidate" role="form">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-warning">
@@ -81,13 +83,21 @@
 				<div class="panel-body">
 					<div class="row margin-row">
 						<div class="col-md-4">
-							<input type="text" class="form-control" name="prodDesc" placeholder="Descripción" value="<? echo $prodDesc; ?>" autofocus></input>
+							<div class="form-group">
+						    	<label for="iptProdDesc">Descripci&oacute;n del Producto</label>
+	 							<input type="text" id="iptProdDesc" class="form-control" name="iptProdDesc" value="<? echo $prodDesc; ?>" autofocus></input>
+	  						</div>
 						</div>
 						<div class="col-md-4">
-							<input type="number" class="form-control" name="precio" placeholder="Precio" value="<? echo $precio; ?>"></input>
+							<div class="form-group">
+						    	<label for="iptPrecio">Precio</label>
+								<input type="number" id="iptPrecio" class="form-control" name="iptPrecio" value="<? echo $precio; ?>"></input>
+	  						</div>
 						</div>
 						<div class="col-md-4">
-							<select class="form-control" name="tipMoneda">
+							<div class="form-group">
+								<label for="selTipMoneda">Tipo de Moneda</label>
+							<select class="form-control" id="selTipMoneda" name="selTipMoneda">
 								<?php
 									foreach ($tiposDeMoneda as $tipMon ) {
 										if (($tipMoneda == $tipMon->ID) && ($tipMoneda <> '')) {
@@ -98,11 +108,52 @@
 									}
 								?>
 							</select>
+							</div>
+
 						</div>
 					</div>
+
+						<div class="row margin-row">
+
+						<div class="col-md-6">
+							<div class="form-group">
+						    	<label for="selTipFormaPago">Tipo de Forma de Pago</label>
+							<select class="form-control" id="selTipFormaPago" name="selTipFormaPago" >
+								<?php
+									foreach ($tiposFormasDePago as $tipFrmPago ) {
+								if (($tipFormaPago == $tipFrmPago->ID) && ($tipFormaPago <> '')) {
+											echo "<option  selected='selected' value='".$tipFrmPago->ID."'>" . $tipFrmPago->Descripcion . "</option>";
+										} else {
+											echo "<option value='".$tipFrmPago->ID."'>" . $tipFrmPago->Descripcion . "</option>";
+										}
+									}
+								?>
+							</select>
+						</div>
+						</div>	
+						<div class="col-md-6">
+							<div class="form-group">
+						    	<label for="selFormaPago">Forma de Pago</label>
+							<select class="form-control" id="selFormaPago" name="selFormaPago" >
+								<?php
+									foreach ($formasDePago as $frmPago ) {
+								if (($formaPago == $frmPago->ID) && ($formaPago <> '')) {
+											echo "<option  selected='selected' value='".$frmPago->ID."'>" . $frmPago->Descripcion . "</option>";
+										} else {
+											echo "<option  value='".$frmPago->ID."'>" . $frmPago->Descripcion . "</option>";
+										}
+									}
+								?>
+							</select>
+						</div>
+						</div>											
+						</div>
+
 					<div class="row margin-row">
-						<div class="col-md-4">
-							<select class="form-control" name="recPago" >
+						<div class="col-md-6">
+								<div class="form-group">
+						    	<label for="selRecPago">Recurrencia de Pago</label>
+							<select class="form-control" id="selRecPago" name="selRecPago" >
 								<?php
 									foreach ($recurrenciaDePago as $rpago ) {
 									if (($recPago == $rpago->ID) && ($recPago <> '')) {
@@ -114,21 +165,11 @@
 								?>
 							</select>
 						</div>
-						<div class="col-md-4">
-							<select class="form-control" name="formaPago" >
-								<?php
-									foreach ($formasDePago as $frmPago ) {
-								if (($formaPago == $frmPago->ID) && ($frmPago <> '')) {
-											echo "<option selected='selected' value='".$frmPago->ID."'>" . $frmPago->Descripcion . "</option>";
-										} else {
-											echo "<option value='".$frmPago->ID."'>" . $frmPago->Descripcion . "</option>";
-										}
-									}
-								?>
-							</select>
 						</div>
-						<div class="col-md-4">
-							<select class="form-control" name="estado" >
+						<div class="col-md-6">
+							<div class="form-group">
+						    	<label for="selEstado">Estado del Producto</label>
+							<select class="form-control" id="selEstado" name="selEstado" >
 								<?php
 									foreach ($estados as $est ) {
 								if (($estado == $est->ID) && ($estado <> '')) {
@@ -138,9 +179,13 @@
 										}
 									}
 								?>
-							</select>						
+							</select>
+							</div>						
 						</div>
 					</div>
+
+
+
 					<div class="row">
 						<div class="col-md-offset-5">
 							<input type="submit" class="btn btn-primary" value="Guardar" />
@@ -161,6 +206,28 @@
 ?>
 
 <script>
+
+setFormasDePago($('#selTipFormaPago').val());
+
+function setFormasDePago(id) {
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: '../procesamiento/qrysAjaxGET.php?opt=1&tipFrmPagoID=' + id,
+		success: function(formasDePago) {
+			var selFormasDePago = "";
+			$.each(formasDePago, function(idx, obj) {
+				selFormasDePago += "<option value='" + obj.ID + "'>" + obj.Descripcion + "</option>";
+			});		
+			console.log(selFormasDePago);
+			$('#selFormaPago').empty().append(selFormasDePago);
+		},
+		error: function(error) {
+			alert('Error estableciento formas de pago.');
+		}
+	});
+}
+
 $("#register-form").validate({
     
         // Specify the validation rules
@@ -183,6 +250,12 @@ $("#register-form").validate({
             form.submit();
         }
     });
+
+	$('#selTipFormaPago').on('change',function(){
+		setFormasDePago($(this).val());
+	})
+
+
 </script>
 
 <?php
